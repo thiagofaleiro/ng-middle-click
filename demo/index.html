@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="demo">
+  <head>
+    <meta charset="utf-8">
+    <title>Ng Middle Click - Angular Directive</title>
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
+    <style>
+      section{
+        max-width: 600px;
+        padding: 10px 20px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="text-center" ng-controller="Main">
+      <h1 class="text-muted">ng-middle-click / demo</h1>
+      <br>
+      <p>Click on the button below with the middle button (mouse wheel) to open the google passing your search as a parameter.</p>
+      <br>
+      <p>
+        <input type="text" class="form-control" placeholder="Write your search here..." ng-model="searchQuery">
+      </p>
+      <p>
+        <a class="btn btn-primary" data-href="http://google.com" ng-click="onClick($event)" ng-middle-click ng-disabled="!searchQuery">Google it!</a>
+      </p>
+    </section>
+
+    <script src="demo-scripts.min.js"></script>
+    <script>
+      var app = angular.module('demo', []);
+
+      app.controller('Main', ['$scope', function($scope) {
+        $scope.onClick = function($e){
+          var url = $e.target.dataset.href;
+          $e.target.href = url + '/search?q=' + $scope.searchQuery;
+        };
+      }])
+    </script>
+    <script src="../dist/ng-middle-click.min.js"></script>
+  </body>
+</html>
