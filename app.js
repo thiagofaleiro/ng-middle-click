@@ -308,10 +308,10 @@ f&&0==g?"one":"other"}})}]),z(W).ready(function(){Zd(W,yc)}))})(window,document)
 /*!
  * ng-middle-click
  * 
- * Version: 0.0.1 - 2017-09-01T15:28:58.922Z
+ * Version: 0.0.1 - 2017-09-01T17:49:57.976Z
  * License: MIT
  */
 
 
-!function(){"use strict";function e(){var e={restrict:"A",link:function(e,t,n){var i=n.ngMiddleClick||n.ngClick;if(i){var c="onauxclick"in document.documentElement?"auxclick":"mousedown";t.on(c,function(t){if(console.log("Click!!!"),2===t.which){if("disabled"===t.currentTarget.getAttribute("disabled"))return t.preventDefault();e.$eval(i,{$event:t})}})}}};return e}var t,n=document.documentElement.getAttribute("ng-app")||document.body.getAttribute("ng-app");try{t=angular.module(n)}catch(i){t=angular.module("ng-middle-click",[])}t.directive("ngMiddleClick",e)}();
+!function(){"use strict";function e(){var e={restrict:"A",link:function(e,t,n){var i=n.ngMiddleClick||n.ngClick;if(i){var c="onauxclick"in document.documentElement?"auxclick":"mousedown";t.on(c,function(t){if(2===t.which){if("disabled"===t.currentTarget.getAttribute("disabled"))return t.preventDefault();e.$eval(i,{$event:t})}})}}};return e}var t,n=document.documentElement.getAttribute("ng-app")||document.body.getAttribute("ng-app");try{t=angular.module(n)}catch(i){t=angular.module("ng-middle-click",[])}t.directive("ngMiddleClick",e)}();
 //# sourceMappingURL=ng-middle-click.min.js.map
