@@ -291,3 +291,27 @@ c?0:a.length-c-1}a.value("$locale",{DATETIME_FORMATS:{AMPMS:["AM","PM"],DAY:"Sun
 medium:"MMM d, y h:mm:ss a",mediumDate:"MMM d, y",mediumTime:"h:mm:ss a","short":"M/d/yy h:mm a",shortDate:"M/d/yy",shortTime:"h:mm a"},NUMBER_FORMATS:{CURRENCY_SYM:"$",DECIMAL_SEP:".",GROUP_SEP:",",PATTERNS:[{gSize:3,lgSize:3,maxFrac:3,minFrac:0,minInt:1,negPre:"-",negSuf:"",posPre:"",posSuf:""},{gSize:3,lgSize:3,maxFrac:2,minFrac:2,minInt:1,negPre:"-\u00a4",negSuf:"",posPre:"\u00a4",posSuf:""}]},id:"en-us",pluralCat:function(a,e){var f=a|0,g=e;u===g&&(g=Math.min(c(a),3));Math.pow(10,g);return 1==
 f&&0==g?"one":"other"}})}]),z(W).ready(function(){Zd(W,yc)}))})(window,document);!window.angular.$$csp().noInlineStyle&&window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 //# sourceMappingURL=angular.min.js.map
+
+(function() {
+  'use strict';
+
+  var app = angular.module('demo', []);
+
+  app.controller('Main', ['$scope', function($scope) {
+    $scope.onClick = function($e){
+      var url = $e.target.dataset.href;
+      $e.target.href = url + '/search?q=' + $scope.searchQuery;
+    };
+  }]);
+}());
+
+/*!
+ * ng-middle-click
+ * 
+ * Version: 0.0.1 - 2017-09-01T15:28:58.922Z
+ * License: MIT
+ */
+
+
+!function(){"use strict";function e(){var e={restrict:"A",link:function(e,t,n){var i=n.ngMiddleClick||n.ngClick;if(i){var c="onauxclick"in document.documentElement?"auxclick":"mousedown";t.on(c,function(t){if(console.log("Click!!!"),2===t.which){if("disabled"===t.currentTarget.getAttribute("disabled"))return t.preventDefault();e.$eval(i,{$event:t})}})}}};return e}var t,n=document.documentElement.getAttribute("ng-app")||document.body.getAttribute("ng-app");try{t=angular.module(n)}catch(i){t=angular.module("ng-middle-click",[])}t.directive("ngMiddleClick",e)}();
+//# sourceMappingURL=ng-middle-click.min.js.map
