@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Ng Middle Click - Angular Directive</title>
 
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
       section{
         max-width: 600px;
@@ -15,9 +15,12 @@
   </head>
   <body>
     <section class="text-center" ng-controller="Main">
-      <h1 class="text-muted">ng-middle-click / demo</h1>
+      <h1 class="text-muted">ng-middle-click <br>(demo)</h1>
       <br>
-      <p>Click on the button below with the middle button (mouse wheel) to open the google passing your search as a parameter.</p>
+      <p>
+        Click on the button below <strong>with the middle button (mouse wheel)</strong>.<br>
+        It'll open Google passing your search as a parameter.
+      </p>
       <br>
       <p>
         <input type="text" class="form-control" placeholder="Write your search here..." ng-model="searchQuery">
@@ -27,17 +30,10 @@
       </p>
     </section>
 
-    <script src="demo-scripts.min.js"></script>
-    <script>
-      var app = angular.module('demo', []);
-
-      app.controller('Main', ['$scope', function($scope) {
-        $scope.onClick = function($e){
-          var url = $e.target.dataset.href;
-          $e.target.href = url + '/search?q=' + $scope.searchQuery;
-        };
-      }])
-    </script>
-    <script src="../dist/ng-middle-click.min.js"></script>
+    <!-- inject:js -->
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/demo/app.js"></script>
+    <script src="/dist/ng-middle-click.min.js"></script>
+    <!-- endinject -->
   </body>
 </html>
