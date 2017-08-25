@@ -308,7 +308,7 @@ f&&0==g?"one":"other"}})}]),z(W).ready(function(){Zd(W,yc)}))})(window,document)
 /*!
  * ng-middle-click
  * 
- * Version: 0.0.1 - 2017-09-01T17:49:57.976Z
+ * Version: 0.0.1 - 2017-09-02T21:04:24.177Z
  * License: MIT
  */
 
