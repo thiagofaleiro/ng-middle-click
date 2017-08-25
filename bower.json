@@ -5,7 +5,7 @@
     "Thiago Faleiro <me@thiagofaleiro.com>"
   ],
   "description": "",
-  "main": "src/ng-middle-click.js, dist/ng-middle-click.min.js",
+  "main": "dist/ng-middle-click.js",
   "license": "MIT",
   "private": false,
   "ignore": [

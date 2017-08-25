@@ -2,7 +2,10 @@
   "name": "ng-middle-click",
   "version": "0.0.1",
   "description": "",
-  "repository": "git@github.com:thiagofaleiro/ng-middle-click.git",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/thiagofaleiro/ng-middle-click.git"
+  },
   "main": "dist/ng-middle-click.js",
   "scripts": {
     "test": "./node_modules/gulp/bin/gulp.js test"
