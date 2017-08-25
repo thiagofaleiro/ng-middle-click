@@ -1,7 +1,7 @@
 /*!
  * ng-middle-click
  * 
- * Version: 0.0.1 - 2017-08-31T23:38:54.972Z
+ * Version: 0.0.1 - 2017-09-02T21:04:24.177Z
  * License: MIT
  */
 
@@ -37,12 +37,17 @@
     return directive;
   }
 
+  var app;
   var moduleName = 'ng-middle-click';
-  var appAttr = document.documentElement.attributes['ng-app'] ||
-                document.body.attributes['ng-app'];
+  var appAttr = document.documentElement.getAttribute('ng-app') ||
+                document.body.getAttribute('ng-app');
 
   // Using existing angular app global module or setting a new one called 'ng-middle-click'
-  var app = (appAttr) ? angular.module(appAttr.value) : angular.module('ng-middle-click', []);
+  try {
+    app = angular.module(appAttr);
+  } catch (e) {
+    app = angular.module('ng-middle-click', []);
+  }
 
   // Creating directive
   app.directive('ngMiddleClick', ngMiddleClick);
